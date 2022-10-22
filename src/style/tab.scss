@@ -1,0 +1,38 @@
+/* tab.scss */
+
+.tab_bar{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 6.4%;
+    min-height: 54px;
+    border-top: 1px solid #c1c1c1;
+    background: #f7f7f7;
+
+    ul{
+        display: flex;
+        margin-top: 10px;
+        li{
+            justify-content: center;
+            flex: 1;
+            text-align: center;
+            transition: transform 500ms linear 0s;
+            a.navactive{
+                color: #513736;
+            }
+            a{
+                display: block;
+                color: #c0c1c2;
+                svg{
+                    margin: 0 auto;
+                    display: block;
+                    font-size: 22px;
+                }
+            }
+        }
+        li:hover{
+        transform: scale(1.1);
+    }
+    }
+}
