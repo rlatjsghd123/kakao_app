@@ -1,7 +1,10 @@
 import React from 'react'
 import {FaPlane,FaWifi,FaMoon,FaBluetooth,FaBatteryFull} from 'react-icons/fa'
+import { Link } from 'react-router-dom';
 
 function Header({title,text,icon}) {
+
+ 
   return (
    <>
         <header>
@@ -23,7 +26,7 @@ function Header({title,text,icon}) {
         <div className="title_bar">
         <h1>{title}</h1>
         <div className="left_item"><a href="#" className='main_txt'>{text}</a></div>
-        <div className="right_item"><a href="#">{icon}</a></div>
+        <div className="right_item"><Link to="/Auth">{icon}</Link></div>
         </div>
     </header>
     </>

@@ -12,7 +12,7 @@ function More() {
     <main>
             <section className="user_info">
                 <h2 className="blind">사용자 정보</h2>
-                <span className="profile_img empty"><img src='imgs/empty.jpg' /></span>
+                <span className="profile_img empty"><img src='imgs/empty.jpg' alt='user' /></span>
                 <span className="profile_info">
                     <span className="profile_name">My Name</span>
                     <span className="profile_email">Uesrud@gmail.com</span>
@@ -46,9 +46,9 @@ function More() {
             <section className="more_app">
                 <h2 className="blind">앱 더보기</h2>
                 <ul>
-                    <li><a href="#"><span className="app_icon"><img src='imgs/kakaofriends.png' /></span>Kakao Story</a></li>
-                    <li><a href="#"><span className="app_icon"><img src='imgs/path.png' /></span>Path</a></li>
-                    <li><a href="#"><span className="app_icon"><img src='imgs/kakaostory.png' /></span>Kakao friends</a></li>
+                    <li><a href="#"><span className="app_icon"><img src='imgs/kakaofriends.png' alt='카카오프렌즈'  /></span>Kakao Story</a></li>
+                    <li><a href="#"><span className="app_icon"><img src='imgs/path.png' alt='패치'  /></span>Path</a></li>
+                    <li><a href="#"><span className="app_icon"><img src='imgs/kakaostory.png' alt='카카오스토리'  /></span>Kakao friends</a></li>
                 </ul>
             </section>
         </main>

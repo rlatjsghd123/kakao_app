@@ -1,16 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {FaSearch} from 'react-icons/fa'
 import "../style/Main.scss"
 import Tab from '../router/Tab'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Header from './Header';
 import {GoGear} from 'react-icons/go'
 import protrait from '../data/portrait.json'
+import { AuthService } from '../fbase';
+import {  onAuthStateChanged,deleteUser   } from "firebase/auth";
 
 function Main({profile}) {
+   const [logOut, setLogOut] = useState(true);
+   const [error, setError] = useState("");
+
+
+   onAuthStateChanged(AuthService, (user) => {
+    if (user) {
+        setLogOut(false);
+    } else {
+        setLogOut(true);
+    }
+  });
+  const onLogOut = () => {
+    const user = AuthService.currentUser;
+
+deleteUser(user).then(() => {
+//  // User deleted.
+console.log(user);
+}).catch((error) => {
+    setError(error.message)
+});
+  }
   return (
     <>
-    <Header  title={'Firend 1'} text={"Manage"} icon={<GoGear />} />
+    <Header  title={'Firend 1'} text={"Manage"} icon={logOut ? <GoGear /> : <span onClick={onLogOut}>로그아웃</span>} />
     <main>
         <form className="search_box">
             <fieldset className="search_inner">

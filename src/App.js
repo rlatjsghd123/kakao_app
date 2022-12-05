@@ -8,6 +8,11 @@ import Proflie from './components/Proflie';
 import Chatting from './components/Chatting';
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import Auth from './components/Auth';
+import SignUp from './components/SignUp';
+import { authService } from './fbase';
+
+
 function App() {
   const [profile,setProfile] = useState([]);
   const getProfiles = async () =>{
@@ -19,7 +24,7 @@ function App() {
     getProfiles();
   },[])
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Routes>
         <Route path='/' element={<Main profile={profile} />}></Route>
         <Route path='/Chat' element={<Chat profile={profile} />}></Route>
@@ -27,6 +32,8 @@ function App() {
         <Route  path='/More' element={<More />}></Route>
         <Route  path='/Proflie/:id' element={<Proflie />}></Route>
         <Route  path='/Chatting/:id' element={<Chatting />}></Route>
+        <Route path='/Auth' element={<Auth />}></Route>
+        <Route path="/SignUp" element={<SignUp />}></Route>
     </Routes>
     </BrowserRouter>
   )
