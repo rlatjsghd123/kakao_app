@@ -14,7 +14,6 @@ import { authService } from './fbase';
 
 
 function App() {
-  window.resizeTo(500,800)
   
   const [profile,setProfile] = useState([]);
   const getProfiles = async () =>{

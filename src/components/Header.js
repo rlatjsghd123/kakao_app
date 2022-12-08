@@ -26,7 +26,7 @@ function Header({title,text,icon}) {
         <div className="title_bar">
         <h1>{title}</h1>
         <div className="left_item"><a href="#" className='main_txt'>{text}</a></div>
-        <div className="right_item"><Link to="/Auth">{icon}</Link></div>
+        <div className="right_item"><Link to="/">{icon}</Link></div>
         </div>
     </header>
     </>

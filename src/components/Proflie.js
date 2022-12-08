@@ -11,7 +11,7 @@ function Proflie() {
     const {info,index,protrait} = location.state;
     return(
     <>
-    <Header text={<Link to='/'><FaChevronLeft /></Link>} icon={<FaUser />}  />
+    <Header text={<Link to='/Home'><FaChevronLeft /></Link>} icon={<FaUser />}  />
     <main>
         <section className="background"><h2 className="blind">My Profile background image</h2></section>
         <section className="profile">
