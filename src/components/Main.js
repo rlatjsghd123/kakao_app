@@ -12,7 +12,7 @@ import {  onAuthStateChanged,deleteUser   } from "firebase/auth";
 function Main({profile}) {
    const [logOut, setLogOut] = useState(true);
    const [error, setError] = useState("");
-
+    const navigate = useNavigate();
 
    onAuthStateChanged(AuthService, (user) => {
     if (user) {
@@ -26,7 +26,7 @@ function Main({profile}) {
 
 deleteUser(user).then(() => {
 //  // User deleted.
-console.log(user);
+    navigate("/");
 }).catch((error) => {
     setError(error.message)
 });

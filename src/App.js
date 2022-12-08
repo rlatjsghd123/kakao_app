@@ -14,10 +14,11 @@ import { authService } from './fbase';
 
 
 function App() {
+  window.resizeTo(500,800)
+  
   const [profile,setProfile] = useState([]);
   const getProfiles = async () =>{
     const {data} = await axios.get("https://jsonplaceholder.typicode.com/users");
-
     setProfile(data);
   }
   useEffect(()=>{
@@ -26,13 +27,13 @@ function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Routes>
-        <Route path='/' element={<Main profile={profile} />}></Route>
+        <Route path='/' element={<Auth />}></Route>
+        <Route path='/Home' element={<Main profile={profile} />}></Route>
         <Route path='/Chat' element={<Chat profile={profile} />}></Route>
         <Route  path='/Find' element={<Find />}></Route>
         <Route  path='/More' element={<More />}></Route>
         <Route  path='/Proflie/:id' element={<Proflie />}></Route>
         <Route  path='/Chatting/:id' element={<Chatting />}></Route>
-        <Route path='/Auth' element={<Auth />}></Route>
         <Route path="/SignUp" element={<SignUp />}></Route>
     </Routes>
     </BrowserRouter>

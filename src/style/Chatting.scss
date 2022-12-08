@@ -61,10 +61,7 @@ body{
    align-items: flex-end;
     max-width: 240px;
     margin-right: 10px;
-
-        .chat{
-            background: #ffe73a;
-        }
+    position: relative;
         .chat_time{
             position: absolute;
             left: -30px;

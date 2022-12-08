@@ -2,7 +2,10 @@ import React, { useState } from 'react'
 import { AuthService } from '../fbase';
 import {  createUserWithEmailAndPassword  } from "firebase/auth";
 import { async } from '@firebase/util';
+import '../style/SignUp.scss'
+import Tab from '../router/Tab'
 import { useNavigate } from 'react-router-dom';
+import Header from './Header';
 
 function SignUp() {
    const navigate = useNavigate();
@@ -22,7 +25,7 @@ function SignUp() {
     e.preventDefault();
     try{
   await createUserWithEmailAndPassword(AuthService, email, password);
-  navigate("/Auth");
+  navigate("/");
     }catch(error){
       console.log(error)
     }
@@ -30,6 +33,7 @@ function SignUp() {
 
   return (
    <>
+   <Header />
       <form className='sign_form' onSubmit={onAccount}>
             <fieldset>
             <legend className='blind'>회원가입</legend>
@@ -38,6 +42,7 @@ function SignUp() {
             <input type="submit" value="회원가입" />
             </fieldset>
         </form>
+        <Tab />
         </>
   )
 }

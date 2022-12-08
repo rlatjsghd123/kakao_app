@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import '../style/auth.scss'
-import {FaChevronLeft,FaGithub,FaGoogle} from 'react-icons/fa'
-import Header from './Header';
+import {FaGithub,FaGoogle} from 'react-icons/fa'
+import {RiKakaoTalkFill} from 'react-icons/ri'
 import { AuthService } from '../fbase';
-import {  signInWithEmailAndPassword,GoogleAuthProvider,GithubAuthProvider,signInWithPopup,onAuthStateChanged   } from "firebase/auth";
-import { async } from '@firebase/util';
+import {  signInWithEmailAndPassword,GoogleAuthProvider,GithubAuthProvider,signInWithPopup   } from "firebase/auth";
 
 
 
@@ -32,7 +31,7 @@ function Auth() {
         e.preventDefault();
         try{
        await signInWithEmailAndPassword(AuthService, email, password);
-       navigate("/"); 
+       navigate("/Home"); 
         }catch(error){
             setError("아이디, 비밀번호를 확인해주세요.");
         }   
@@ -47,13 +46,13 @@ function Auth() {
         provider = new GithubAuthProvider();
         }
         signInWithPopup(AuthService, provider);
-        navigate("/"); 
+        navigate("/Home"); 
     }
     
   return (
     <>
-    <Header  title={"Auth"} text={<Link to="/"><FaChevronLeft /></Link>} />
     <main className='auth_main'>
+        <h1><RiKakaoTalkFill /></h1>
         <form className='auth_form' onSubmit={onLogin}>
             <fieldset>
             <legend className='blind'>로그인</legend>

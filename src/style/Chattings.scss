@@ -1,0 +1,16 @@
+.chats{
+    font-size: 16px;
+    line-height: 1;
+    margin: 5px;
+    padding: 10px 5px;
+    border-radius: 5px;
+    background: #ffe73a;
+}
+.del_btn{
+    position: absolute;
+    left: -50%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    outline: none;
+}
